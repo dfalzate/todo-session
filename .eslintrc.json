@@ -2,9 +2,14 @@
    "env": {
       "browser": true,
       "commonjs": true,
-      "es6": true
+      "es6": true,
+      "jest/globals": true
    },
-   "extends": "eslint:recommended",
+   "extends": [
+      "plugin:jest/recommended",
+      "eslint:recommended",
+      "plugin:jest-formatting/recommended"
+   ],
    "globals": {
       "process": true,
       "Atomics": "readonly",
@@ -13,5 +18,14 @@
    "parserOptions": {
       "ecmaVersion": 2018
    },
-   "rules": {}
+   "plugins": ["jest", "jest-formatting"],
+   "rules": {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+      "jest-formatting/padding-around-describe-blocks": 2,
+      "jest-formatting/padding-around-test-blocks": 2
+   }
 }
